@@ -3,7 +3,7 @@ from django.db import models
 from django.db import models
 from products.models import Product
 
-class Ouflow(models.Model):
+class Outflow(models.Model):
     product = models.ForeignKey(Product, on_delete=models.PROTECT, related_name='outflows')
     quantity = models.IntegerField()
     description = models.TextField(null=True, blank=True)
