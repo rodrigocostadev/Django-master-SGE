@@ -20,6 +20,12 @@
             </div>
         </form>
     </div>
+
+    <div class="col-md-6">
+        <a href="{% url 'brand_create' %}" class="btn btn-success float-end">
+            <i class="bi bi-plus"></i> Nova Marca
+        </a>
+    </div>
 </div>
 
 <div class="table-responsive">
@@ -29,6 +35,7 @@
                 <th>Id</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +44,9 @@
                     <td>{{ brand.id }}</td>
                     <td>{{ brand.name }}</td>
                     <td>{{ brand.description }}</td>
+                    <td>
+                        <a href="{% url 'brand_detail' brand.id %}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
