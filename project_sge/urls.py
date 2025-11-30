@@ -7,8 +7,8 @@ urlpatterns = [
 
     path('', include('brands.urls')),
     path('', include('categories.urls')),
-    # path('', include('inflows.urls')),
-    # path('', include('outflows.urls')),
+    path('', include('inflows.urls')),
+    path('', include('outflows.urls')),
     # path('', include('products.urls')),
     path('', include('suppliers.urls')),
 ]
