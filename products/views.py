@@ -4,6 +4,7 @@ from django.views.generic import ListView, CreateView, DetailView, UpdateView, D
 from . import models, forms
 from categories.models import Category
 from brands.models import Brand
+from project_sge import metrics
 
 class ProductListView(ListView):
     model = models.Product
@@ -40,6 +41,7 @@ class ProductListView(ListView):
     # Método utilizado para passar mais objetos para o contexto (o campo context_object_name ja passa o Produto como contexto)
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['product_metrics'] = metrics.get_product_metrics()
         context['categories'] = Category.objects.all()
         context['brands'] = Brand.objects.all()
         return context
