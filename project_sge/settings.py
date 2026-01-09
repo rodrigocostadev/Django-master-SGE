@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',      # Exige autenticação do usuario
-        'rest_framework.permissions.DjangoMoldelPermissions', 
+        'rest_framework.permissions.DjangoModelPermissions', 
     ),
 }
 
