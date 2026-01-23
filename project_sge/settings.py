@@ -79,8 +79,25 @@ WSGI_APPLICATION = 'project_sge.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
+        'ENGINE':'dajngo.db.backends.postgresql_psycopg2',
+        'NAME':'sge',
+        'USER':'postgres',
+        'PASSWORD':'postgres',
+        'HOST':'sge_db',
+        'PORT':'5432',
+    },
+    'dev': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
