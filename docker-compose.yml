@@ -1,0 +1,37 @@
+
+services:
+
+  sge_web:
+    build: . # bilda o sge_web (projeto atual) "o ponto significa que vai pegar o arquivo docker compose na mesma pasta"
+    restart: always # da o restart caso der erro
+    ports:
+      - 8000:8000
+    depends_on:
+      - sge_db
+
+  sge_db:
+    image: postgres:15
+    ports:
+      - 5432:5432
+    volumes:
+      # nome_do_volume:caminho_dentro_do_container
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=sge
+
+volumes:
+  postgres_data:
+
+
+
+# ✅ /var/lib/postgresql/data/
+# Esse é o diretório interno do container do PostgreSQL onde o banco de dados salva:
+# tabelas
+# registros
+# índices
+# usuários
+# tudo que pertence ao banco
+# No container oficial do postgres:15, esse é o diretório padrão onde os dados ficam armazenados.
+

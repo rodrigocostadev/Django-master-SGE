@@ -90,12 +90,12 @@ WSGI_APPLICATION = 'project_sge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'dajngo.db.backends.postgresql_psycopg2',
-        'NAME':'sge',
-        'USER':'postgres',
-        'PASSWORD':'postgres',
-        'HOST':'sge_db',
-        'PORT':'5432',
+        'ENGINE':'django.db.backends.postgresql_psycopg2', # psycopg2 binary é a biblioteca que faz a conexão com o banco de dados POSTGRES
+        'NAME':'sge',              # Nome do banco de dados
+        'USER':'postgres',         # Usuario do postgres
+        'PASSWORD':'postgres',     # Senha do postgres
+        'HOST':'sge_db',           # Nome do container
+        'PORT':'5432',             # 5432 é a porta padrão do postgres
     },
     'dev': {
         'ENGINE': 'django.db.backends.sqlite3',
