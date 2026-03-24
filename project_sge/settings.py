@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'project_sge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'dajngo.db.backends.postgresql_psycopg2',
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME':'sge',
         'USER':'postgres',
         'PASSWORD':'postgres',
