@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'project_sge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'dajngo.db.backends.postgresql_psycopg2',
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME':'sge',
         'USER':'postgres',
         'PASSWORD':'postgres',
@@ -147,7 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication', # Classe de autenticação JWT para proteger as rotas da API
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',      # Exige autenticação do usuario
