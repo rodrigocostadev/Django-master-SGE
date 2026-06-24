@@ -2,10 +2,20 @@
 
 from pathlib import Path
 from datetime import timedelta
+import os
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Cria uma instância do environ
+env = environ.Env()
+
+# Lê o arquivo .env
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+OPENAI_API_KEY = env("OPENAI_API_KEY")
+OPENAI_MODEL = 'gpt-3.5-turbo'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -39,6 +49,7 @@ INSTALLED_APPS = [
     'products',
     'inflows',
     'outflows',
+    'ai',
 ]
 
 LOGIN_URL = 'login'
